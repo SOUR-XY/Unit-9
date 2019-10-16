@@ -182,3 +182,176 @@ public class TestPoint2D {
 }
 
 9-6
+public class helloo {
+	double radius;
+	static int numberofobjects = 0;
+	
+	circlewithstaticmember(){
+		radius = 1;
+		numberofobjects++;
+	}
+	
+	circlewithstaticmembers(double newradius){
+		radius = newradius;
+		numberofobjects++;
+	}
+	
+	static int getnumberofobjects() {
+		return numberofobjects;
+	}
+	
+	double getarea() {
+		return radius *radius *Math.PI;
+	}
+}
+
+9-7
+public class tess {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       System.out.println("before creating objects");
+       System.out.println("the number of circle objects is"+
+       circlewithstaticmembers.numberofobjects);
+       
+       cieclewithstaticmembers c1 = new circlewithstaticmembers();
+       
+       System.out.println("\nafter creating c1");
+       System.out.println("c1:radius("+c1.radius+") and number of circle objects(" + c1.numberofobjects
+    		   +")");
+       
+       circlewithstaticmembers c2 = new circlewithstaticmember(5);
+       
+       c1.radius=9;
+       System.out.printfln("\nafter creating c2 and modifying c1");
+       System.out.printfln("c1:radius (" + c1.radius+") and number of circle objects ("+
+       c1.numberofobjects+")");
+       System.out.printfln("c2:radius (" + c2.radius+") and number of circle objects ("+
+       c2.numberofobjects+")");
+	}
+
+}
+
+9-8
+public class tsst {
+	private double radius =1;
+	private static int numberofobjects=0;
+	
+	public circlewithprivatedatafields() {
+		numberofobjects++;
+	}
+	
+	public circlewithprivatedatafields(double newradius) {
+		radius = newradius;
+		numberofobjects++;
+	}
+	
+	public double getradius() {
+		return radius;
+	}
+	
+	public void setradius(double newradius) {
+		radius=(newradius>=0)?newradius:0;
+	}
+	
+	public static int getnumberofobjects() {
+		return numberofobjects;
+	}
+	
+	public static int getnumberofobjects() {
+		return numberofobjects;
+	}
+	
+	public double getarea() {
+		return radius *radius *Math.PI;
+	}
+
+}
+
+9-9
+public class tess {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        circlewithprivatedatafields mycircle=
+        		new circlewithprivatedatafields(5.0);
+        System.out.printfln("the area of the circle of radius"+
+        		mycircle.getradius()+"is"+mycircle.getarea());
+        
+        mycircle.setradius(mycircle.getradius()*1.1);
+        System.out.println("the area of the radius" + mycircle.getradius()+" is "+ 
+        mycircle.getarea());
+        
+        System.out.println("the number of objects created is "+
+        cieclewithprivatedatafields.getnumberofobjects());
+	}
+}
+
+9-10
+public class tess {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        circlewithprivatedatafields mycircle =
+        		new circlewithprivatedatafields(1);
+        
+        int n=5;
+        printareas(mycircle,n);
+        
+        System.out.println("\n" + "Radius is" +mycircle.getradius());
+        System.out.println("n is" + n);
+        
+        public static void printareas(
+        		circlewithprivatedatafields c,int times) {
+        	System.out.println("radius\t\tarea");
+        	while(times>=1)
+        	{
+        		System.out.println(c.getradius()+"\t\t"+c.getarea());
+        		c.setradius(c.getradius()+1);
+        		times--;
+        	}
+        }
+	}
+}
+
+9-11
+public class tess {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        circlewithprivatedatafields[] circlearray;
+        
+        circlearray(circlearray);
+        
+        public static circlewithprivatedatafields[] createcirclearray() {
+        	circlewithprivatedatafields[] circlearray =
+        			new circlewithprivatedatafields[5];
+        	
+        	for(int i=0;i<circlearray.length;i++)
+        	{
+        		circlearray[i]=
+        				new circlewithprivatedatafields(Math.random()*100);
+        	}
+        	return circlearray;
+        }
+        public static void printcirclearray(
+        		circlewithprivatedatafields[] circlearray) {
+        	System.out.printf("%-30s%-15s\n", "radius","area");
+        	for(int i=0;i<circlearray.length;i++)
+        	{
+        		System.out.printf("%-30f%-15f\n",circlearray[i].getradius(),
+        				circlearray[i].getarea());
+        	}
+        	System.out.printf("%-30s%-15f\n", "the total area of circles is",
+        			sum(circlearray));
+        }
+        public statics double sum(circlewithprivatedatafields[] circlearray) {
+        	double sum = 0;
+        	for(int i=0;i<circlearray.length;i++)
+        		sum+=circlearray[i].getarea();
+        	return sum;
+        }
+        	
+        
+	}
+}
